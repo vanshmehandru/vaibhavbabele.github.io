@@ -168,17 +168,20 @@ iframe{
     
 }
 /* Override for dark mode */
-.dark-mode .form input[type="text"],
-.dark-mode .form select,
-.dark-mode .form input[type="email"],
-.dark-mode .form input[type="password"],
-.dark-mode .form input[type="number"],
-.dark-mode .form input[type="date"],
-.dark-mode .form textarea {
-    box-shadow: 0 0 2rem #1e1f20; /* Faint grey shadow (dark mode) */
-    color: #212529 !important;
+.form input[type="text"],
+.form select, /* Added this */
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="number"],
+.form input[type="date"], /* Added a comma here if it was missing */
+.form textarea{
+    font-weight: bold; /* Added this line */
+    /* ... existing properties ... */
 }
 
+.dark-mode .form select {
+    font-weight: bold; /* Ensures bold in dark mode too */
+}
 
 /* Placeholder styling */
 .form input::placeholder,
@@ -191,7 +194,9 @@ iframe{
 /* For select dropdown placeholder */
 .form select:invalid {
     color: var(--placeholder-color);
+    font-weight: bold; 
 }
+
 /* Dark mode dropdown styling */
 .dark-mode .form select {
     color: white !important; 
@@ -245,6 +250,15 @@ iframe{
     box-shadow: 0 0 1rem var(--main-color);
     border: 3px solid rgb(25, 11, 11);
 
+}
+
+.form select:hover {
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #e6eef4;
+    color: var(--primary-text-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    border: 3px solid rgb(25, 11, 11);
 }
 
 
